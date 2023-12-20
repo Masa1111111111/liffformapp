@@ -19,9 +19,17 @@
         <div>
             <input class="form-control w-100 mt-1" name="genba">
         </div>
-        <p class="mt-3">現場住所</p>
+        <p class="mt-3">届け先住所</p>
         <div>
             <input class="form-control w-100 mt-1" name="jyuusyo">
+        </div>
+        <p class="mt-3">届け先名</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="todokeName">
+        </div>
+        <p class="mt-3">納期</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="nouki">
         </div>
 	
 	<table>
@@ -49,6 +57,14 @@
         <td><div><input class="form-control w-100 mt-1" name="suuryo5"></div></td>
 	</tr>
 	</table>
+        <p class="mt-3">備考</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="bikou">
+        </div>
+        <p class="mt-3">配達指示</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="haitatu">
+        </div>
 
         <input type="submit" class="mt-4 btn btn-primary" value="送信">
     </form>
@@ -94,9 +110,11 @@
                 const name    = $('input[name="name"]').val();
                 const genba = $('input[name="genba"]').val();
                 const jyuusyo  = $('input[name="jyuusyo"]').val();
+                const todokeName  = $('input[name="todokeName"]').val();
+                const nouki  = $('input[name="nouki"]').val();
                 const syouhin1  = $('input[name="syouhin1"]').val();
                 const suuryo1 = $('input[name="suuryo1"]').val();
-                var msg = `得意先名：${name}\n現場名：${genba}\n現場住所：${jyuusyo}\n商品名：${syouhin1}　数量：${suuryo1}`;
+                var msg = `得意先名：${name}\n現場名：${genba}\n届け先住所：${jyuusyo}\n届け先名：${todokeName}\n納期：${nouki}\n商品名：${syouhin1}　数量：${suuryo1}`;
 
                 const syouhin2  = $('input[name="syouhin2"]').val();
                 const suuryo2 = $('input[name="suuryo2"]').val();
@@ -126,6 +144,15 @@
 	                msg = msg + `\n商品名：${syouhin5}　数量：${suuryo5}`;
 		}
 
+		const bikou  = $('input[name="bikou"]').val();
+		if ( bikou !== null && bikou !== undefined && bikou !== "" ) {
+	                msg = msg + `\n備考：${bikou}`;
+		}
+                const haitatu = $('input[name="haitatu"]').val();
+		if ( haitatu !== null && haitatu !== undefined && haitatu !== "" ) {
+	                msg = msg + `\n備考：${haitatu}`;
+		}
+		    
                 sendText(msg);
                 return false;
             });
