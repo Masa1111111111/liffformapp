@@ -31,13 +31,13 @@ function GetQueryString() {
         <div>
             <input class="form-control w-100 mt-1" name="genba">
         </div>
-        <p class="mt-3">届け先住所</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="jyuusyo">
-        </div>
         <p class="mt-3">届け先名</p>
         <div>
             <input class="form-control w-100 mt-1" name="todokeName">
+        </div>
+        <p class="mt-3">届け先住所</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="jyuusyo">
         </div>
         <p class="mt-3">納期</p>
         <div>
@@ -167,7 +167,7 @@ if(ss == 1){
                     const nouki  = $('input[name="nouki"]').val();
                     const syouhin1  = $('input[name="syouhin1"]').val();
                     const suuryo1 = $('input[name="suuryo1"]').val();
-                    var msg = `得意先名：${name}\n現場名：${genba}\n届け先住所：${jyuusyo}\n届け先名：${todokeName}\n納期：${nouki}\n商品名：${syouhin1}　数量：${suuryo1}`;
+                    var msg = `得意先名：${name}\n現場名：${genba}\n届け先名：${todokeName}\n届け先住所：${jyuusyo}\n納期：${nouki}\n商品名：${syouhin1}　数量：${suuryo1}`;
 
                     const syouhin2  = $('input[name="syouhin2"]').val();
                     const suuryo2 = $('input[name="suuryo2"]').val();
@@ -215,7 +215,7 @@ if(ss == 1){
                     const haba1 = $('input[name="haba1"]').val();
                     const naga1 = $('input[name="naga1"]').val();
 		    suuryo1 = haba1 * naga1
-                    var msg = `得意先名：${name}\n現場名：${genba}\n届け先住所：${jyuusyo}\n届け先名：${todokeName}\n納期：${nouki}\n商品名：${syouhin1}　㎡：${suuryo1}`;
+                    var msg = `得意先名：${name}\n現場名：${genba}\n届け先名：${todokeName}\n届け先住所：${jyuusyo}\n納期：${nouki}\n商品名：${syouhin1}　㎡：${suuryo1}`;
 
                     const syouhin2  = $('input[name="syouhin2"]').val();
                     const haba2 = $('input[name="haba2"]').val();
