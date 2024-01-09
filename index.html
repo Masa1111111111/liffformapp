@@ -77,32 +77,37 @@ if(ss == 1){
 } else {
 	document.write('<table>');
 	document.write('<tr>');
-        document.write('<th><class="mt-3">カーペット名</th> <th><class="mt-3">幅</th>　<th><class="mt-3">長さ</th>');
+        document.write('<th><class="mt-3">カーペット名</th> <th><class="mt-3">幅(cm)</th>　<th><class="mt-3">長さ(cm)</th><th><class="mt-3">本</th>');
 	document.write('</tr>');
 	document.write('<tr>');
         document.write('<td><div><input class="form-control w-100 mt-1" name="syouhin1" required></div></td>');
         document.write('<td><div><input class="form-control w-100 mt-1" name="haba1" required></div></td>');
         document.write('<td><div><input class="form-control w-100 mt-1" name="naga1" required></div></td>');
+        document.write('<td><div><input class="form-control w-100 mt-1" name="honn1" required></div></td>');
 	document.write('</tr>');
 	document.write('<tr>');
         document.write('<td><div><input class="form-control w-100 mt-1" name="syouhin2"></div></td>');
         document.write('<td><div><input class="form-control w-100 mt-1" name="haba2"></div></td>');
         document.write('<td><div><input class="form-control w-100 mt-1" name="naga2"></div></td>');
+        document.write('<td><div><input class="form-control w-100 mt-1" name="honn2"></div></td>');
 	document.write('</tr>');
 	document.write('<tr>');
         document.write('<td><div><input class="form-control w-100 mt-1" name="syouhin3"></div></td>');
         document.write('<td><div><input class="form-control w-100 mt-1" name="haba3"></div></td>');
         document.write('<td><div><input class="form-control w-100 mt-1" name="naga3"></div></td>');
+        document.write('<td><div><input class="form-control w-100 mt-1" name="honn3"></div></td>');
 	document.write('</tr>');
 	document.write('<tr>');
         document.write('<td><div><input class="form-control w-100 mt-1" name="syouhin4"></div></td>');
         document.write('<td><div><input class="form-control w-100 mt-1" name="haba4"></div></td>');
         document.write('<td><div><input class="form-control w-100 mt-1" name="naga4"></div></td>');
+        document.write('<td><div><input class="form-control w-100 mt-1" name="honn4"></div></td>');
 	document.write('</tr>');
 	document.write('<tr>');
         document.write('<td><div><input class="form-control w-100 mt-1" name="syouhin5"></div></td>');
         document.write('<td><div><input class="form-control w-100 mt-1" name="haba5"></div></td>');
         document.write('<td><div><input class="form-control w-100 mt-1" name="naga5"></div></td>');
+        document.write('<td><div><input class="form-control w-100 mt-1" name="honn5"></div></td>');
 	document.write('</tr>');
 	document.write('</table>');
 }
@@ -214,43 +219,48 @@ if(ss == 1){
                     const syouhin1  = $('input[name="syouhin1"]').val();
                     const haba1 = $('input[name="haba1"]').val();
                     const naga1 = $('input[name="naga1"]').val();
-		    suuryo1 = haba1 * naga1
-                    var msg = `得意先名：${name}\n現場名：${genba}\n届け先名：${todokeName}\n届け先住所：${jyuusyo}\n納期：${nouki}\n商品名：${syouhin1}　㎡：${suuryo1}`;
+                    const honn1 = $('input[name="honn1"]').val();
+		    suuryo1 = haba1 * naga1 / 10000
+                    var msg = `得意先名：${name}\n現場名：${genba}\n届け先名：${todokeName}\n届け先住所：${jyuusyo}\n納期：${nouki}\n商品名：${syouhin1}　㎡：${suuryo1} 本：${honn1}`;
 
                     const syouhin2  = $('input[name="syouhin2"]').val();
                     const haba2 = $('input[name="haba2"]').val();
                     const naga2 = $('input[name="naga2"]').val();
-		    suuryo2 = haba2 * naga2
+                    const honn2 = $('input[name="honn2"]').val();
+		    suuryo2 = haba2 * naga2 / 10000
 
     		    if ( syouhin2 !== null && syouhin2 !== undefined && syouhin2 !== "" ) {
-	                msg = msg + `\n商品名：${syouhin2}　㎡：${suuryo2}`;
+	                msg = msg + `\n商品名：${syouhin2}　㎡：${suuryo2} 本：${honn2}`;
 		    }
 
                     const syouhin3  = $('input[name="syouhin3"]').val();
                     const haba3 = $('input[name="haba3"]').val();
                     const naga3 = $('input[name="naga3"]').val();
-		    suuryo3 = haba3 * naga3
+                    const honn3 = $('input[name="honn3"]').val();
+		    suuryo3 = haba3 * naga3 / 10000
 
 		    if ( syouhin3 !== null && syouhin3 !== undefined && syouhin3 !== "" ) { 
-	                msg = msg + `\n商品名：${syouhin3}　㎡：${suuryo3}`;
+	                msg = msg + `\n商品名：${syouhin3}　㎡：${suuryo3} 本：${honn3}`;
 		    }
 
                     const syouhin4  = $('input[name="syouhin4"]').val();
                     const haba4 = $('input[name="haba4"]').val();
                     const naga4 = $('input[name="naga4"]').val();
-		    suuryo4 = haba4 * naga4
+                    const honn4 = $('input[name="honn4"]').val();
+		    suuryo4 = haba4 * naga4 / 10000
 
 		    if ( syouhin4 !== null && syouhin4 !== undefined && syouhin4 !== "" ) {
-	                msg = msg + `\n商品名：${syouhin4}　㎡：${suuryo4}`;
+	                msg = msg + `\n商品名：${syouhin4}　㎡：${suuryo4} 本：${honn4}`;
 		    }
 
                     const syouhin5  = $('input[name="syouhin5"]').val();
                     const haba5 = $('input[name="haba5"]').val();
                     const naga5 = $('input[name="naga5"]').val();
-		    suuryo5 = haba5 * naga5
+                    const honn5 = $('input[name="honn5"]').val();
+		    suuryo5 = haba5 * naga5 / 10000
 
 		    if ( syouhin5 !== null && syouhin5 !== undefined && syouhin5 !== "" ) {
-	                msg = msg + `\n商品名：${syouhin5}　㎡：${suuryo5}`;
+	                msg = msg + `\n商品名：${syouhin5}　㎡：${suuryo5} 本：${honn5}`;
 		    }
 
 		    const bikou  = $('input[name="bikou"]').val();
