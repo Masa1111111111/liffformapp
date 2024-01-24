@@ -274,7 +274,29 @@ if(ss == 1){
 		}
 		    
                 sendText(msg);
-                return false;
+
+		// アドレスの指定
+		var address = jyuusyo
+		    
+		// StaticMap の基本設定
+		var map = Maps.newStaticMap()
+			.setSize(600, 600)  // 画像サイズの指定 (Max: 600x600)
+			.setLanguage('ja')  // 言語の設定
+    			.setMobile(true)  // モバイル端末向けの地図
+    			.setMapType(Maps.StaticMap.Type.ROADMAP)  // 航空写真＋通常
+
+		// StaticMap上にマーカーを設置
+  		map.addMarker(address) // 住所を指定する場合
+  		// map.addMarker(latitude, longitude)  // 緯度経度を指定する場合 
+
+  		// Blobとして画像を取得
+  		var mapBlob = map.getBlob()
+
+  		// StaticMap へのパスを取得
+  		var mapUrl = map.getMapUrl() 
+                sendText(mapUrl);
+
+		return false;
             });
         });
 
