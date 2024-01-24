@@ -156,6 +156,16 @@ if(ss == 1){
             }).catch(function (error) {
                 window.alert('Failed to send message ' + error);
             });
+
+	function sendText1(text) {
+            liff.sendMessages([{
+                'type': 'text',
+                'text': text
+            }]).then(function () {
+                // liff.closeWindow();
+            }).catch(function (error) {
+                window.alert('Failed to send message ' + error);
+            });
         }
 
         const params = (new URL(document.location)).searchParams;
@@ -273,7 +283,7 @@ if(ss == 1){
 		    }
 		}
 		    
-                sendText(msg);
+                sendText1(msg);
 
 		// アドレスの指定
 		var address = jyuusyo
