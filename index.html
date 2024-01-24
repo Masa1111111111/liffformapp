@@ -147,22 +147,12 @@ if(ss == 1){
             });
         }
 
-        function sendText(text) {
-            liff.sendMessages([{
-                'type': 'text',
-                'text': text
-            }]).then(function () {
-                liff.closeWindow();
-            }).catch(function (error) {
-                window.alert('Failed to send message ' + error);
-            });
-
 	function sendText1(text) {
             liff.sendMessages([{
                 'type': 'text',
                 'text': text
             }]).then(function () {
-                // liff.closeWindow();
+                liff.closeWindow();
             }).catch(function (error) {
                 window.alert('Failed to send message ' + error);
             });
@@ -283,29 +273,7 @@ if(ss == 1){
 		    }
 		}
 		    
-                sendText1(msg);
-
-		// アドレスの指定
-		var address = jyuusyo
-		    
-		// StaticMap の基本設定
-		var map = Maps.newStaticMap()
-			.setSize(600, 600)  // 画像サイズの指定 (Max: 600x600)
-			.setLanguage('ja')  // 言語の設定
-    			.setMobile(true)  // モバイル端末向けの地図
-    			.setMapType(Maps.StaticMap.Type.ROADMAP)  // 航空写真＋通常
-
-		// StaticMap上にマーカーを設置
-  		map.addMarker(address) // 住所を指定する場合
-  		// map.addMarker(latitude, longitude)  // 緯度経度を指定する場合 
-
-  		// Blobとして画像を取得
-  		var mapBlob = map.getBlob()
-
-  		// StaticMap へのパスを取得
-  		var mapUrl = map.getMapUrl() 
-                sendText(mapUrl);
-
+                sendText(msg);
 		return false;
             });
         });
